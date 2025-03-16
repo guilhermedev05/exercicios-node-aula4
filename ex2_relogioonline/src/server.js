@@ -20,10 +20,7 @@ const server = http.createServer((req, res) => {
             `)
     }else if (req.url === '/hora') {
         res.writeHead(200, {'Content-type': 'text/plain; charset=utf-8'})
-        let data = new Date().toLocaleDateString()
-        let hora = new Date().toLocaleTimeString()
-        let formatacao = `Data: ${data} <br> Hora atual: ${hora}`
-        res.end(formatacao)
+        res.end(`Data e hora atual: ${new Date().toLocaleString()}`)
 
     }else{
         res.writeHead(404, {'Content-type': 'text/html; charset=utf-8'})
